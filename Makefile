@@ -18,7 +18,7 @@ qemu: qemubuild
 
 qemubuild:
 	docker build -t riscv .
-	@$(contain) make qemulite -j8 && bash /home/build/freedom-u-sdk/install.sh
+	@$(contain) bash -c "make qemulite -j8 &&  bash /home/build/freedom-u-sdk/install.sh"
 
 
 build:

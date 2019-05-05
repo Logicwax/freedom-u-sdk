@@ -18,11 +18,7 @@ qemu: qemubuild
 
 qemubuild:
 	docker build -t riscv .
-	@$(contain) make qemulite -j8 && \
-	cp /home/build/freedom-u-sdk/work/riscv-pk/bbl /home/build/compiled/ \
-	cp /home/build/freedom-u-sdk/work/riscv-qemu/prefix/bin/qemu-system-riscv64 /home/build/compiled/ \
-	cp /home/build/freedom-u-sdk/work/rootfs.bin /home/build/compiled/
-
+	@$(contain) make qemulite -j8 && bash install.sh
 
 
 build:

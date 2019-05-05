@@ -74,9 +74,11 @@ RUN echo ".PHONY: qemulite" >> /home/build/freedom-u-sdk/Makefile
 RUN echo "qemulite: \$(qemu) \$(bbl) \$(rootfs)" >> /home/build/freedom-u-sdk/Makefile
 RUN make  all qemulite -j8
 RUN mkdir -p /home/build/compiled
-# RUN cp /home/build/freedom-u-sdk/work/riscv-pk/bbl /home/build/compiled/
-# RUN cp /home/build/freedom-u-sdk/work/riscv-qemu/prefix/bin/qemu-system-riscv64 /home/build/compiled/
-# RUN cp /home/build/freedom-u-sdk/work/rootfs.bin /home/build/compiled/
+RUN echo "cp /home/build/freedom-u-sdk/work/riscv-pk/bbl /home/build/compiled/" > /home/build/freedom-u-sdk/install.sh
+RUN echo "cp /home/build/freedom-u-sdk/work/rootfs.bin /home/build/compiled/" >> /home/build/freedom-u-sdk/install.sh
+RUN echo "cp /home/build/freedom-u-sdk/work/riscv-qemu/prefix/bin/qemu-system-riscv64 /home/build/compiled/" >> /home/build/freedom-u-sdk/install.sh
+
+
 
 
 
